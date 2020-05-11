@@ -5,10 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>画板</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    hi
+    <canvas id="canvas"></canvas>
+    <script>
+        let canvas = document.getElementById("canvas")
+        canvas.width = document.documentElement.clientWidth;
+        canvas.height = document.documentElement.clientHeight;
+        //canvas本身有高宽，需获取canvas，让canvas高宽等于文档高宽
+        let ctx = canvas.getContext("2d")
+
+        ctx.fillStyle = "black"
+        ctx.strokeStyle="none"
+        let painting = false
+
+        canvas.onmousedown = () => {
+            painting = true
+        }
+
+        canvas.onmousemove = (e) => {
+            if (painting === true) {
+                ctx.beginPath()
+                ctx.arc(e.clientX, e.clientY, 10, 0, 2 * Math.PI)
+                ctx.stroke()
+                ctx.fill()
+            } else {
+                console.log('nothing');
+            }
+        }
+
+        canvas.onmouseup = () => {
+            painting = false
+        }
+    </script>
 </body>
 
 </html>
