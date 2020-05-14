@@ -10,8 +10,12 @@
 ul,ol{
     list-style: none;
 }
+html,body{
+  overflow: auto;
+}
 body{
   overflow: hidden;
+  position: relative;
 }
 .colors{
     position: fixed;
