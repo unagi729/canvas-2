@@ -9,6 +9,9 @@
 ul,ol{
     list-style: none;
 }
+body{
+    overflow:hidden;
+}
 .colors{
     position: fixed;
     top: 20px;
