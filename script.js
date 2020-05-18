@@ -8,11 +8,20 @@ ctx.strokeStyle = "rgb(22,35,32)"
 ctx.lineWidth = 10
 ctx.lineCap = "round"
 
-
-clear.onclick = function(){
+var eraserEnabled = false
+pen.onclick = function () {
+    eraserEnabled = false
+    pen.classList.add('active')
+    eraser.classList.remove('active')
+}
+eraser.onclick = function () {
+    eraserEnabled = true
+    eraser.classList.add('active')
+    pen.classList.remove('active')
+}
+clear.onclick = function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-  }
+}
 
 black.onclick = function () {
     ctx.fillStyle = 'rgb(22,35,32)'
@@ -179,5 +188,3 @@ if (isTouchingDevice) {
         painting = false
     }
 }
-
-
