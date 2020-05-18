@@ -132,10 +132,14 @@ blue.onclick = function () {
     darkgreen.classList.remove('active')
 }
 thin.onclick = function () {
-    ctx.lineWidth = 5
+    ctx.lineWidth = 3
+    thin.classList.add('active')
+    thick.classList.remove('active')
 }
 thick.onclick = function () {
     ctx.lineWidth = 10
+    thick.classList.add('active')
+    thin.classList.remove('active')
 }
 
 let painting = false
