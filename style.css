@@ -26,14 +26,32 @@ body{
     margin: 10px 0;
     transition: all 0.3s;
     }
+.colors> li.black{
+    background: rgb(22,35,32);
+}
 .colors> li.red{
-    background: red;
+    background: rgb(218,75,75);
+}
+.colors> li.pink{
+    background: rgb(248,225,221);
+}
+.colors> li.darkorange{
+    background: rgb(213,123,88);
+}
+.colors> li.orange{
+    background: rgb(241,176,72);
+}
+.colors> li.yellow{
+    background: rgb(253，242，98);
 }
 .colors> li.green{
-    background: green;
+    background: rgb(191,218,103);
+}
+.colors> li.darkgreen{
+    background: rgb(106,173,111);
 }
 .colors> li.blue{
-    background: blue;
+    background: rgb(166,228,210);
 }
 .colors> li.active{
     box-shadow: 0 0 3px rgba(0,0,0,0.95);
