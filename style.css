@@ -90,5 +90,5 @@ body{
     border-top: 20px solid red;
     top:10px;
     left:10px;
-    position: relative;
+    position: fixed;
 }
