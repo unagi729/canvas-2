@@ -18,9 +18,8 @@ body{
     width:100%;
     display: flex;
     justify-content: space-between;
-    bottom: 100%;
     position:fixed;
-    bottom: 0;
+    bottom: 50px;
     margin-bottom: 50px;
 }
 .colors> li{
@@ -84,11 +83,27 @@ body{
 .sizes > li.active{
     transform: scale(1.75);
 }
-.clear{
-    height: 0;
-    width: 20px;
-    border-top: 20px solid red;
-    top:10px;
-    left:10px;
-    position: fixed;
+.actions{
+    position:fixed;
+    bottom:25px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.actions >li{
+    display: inline-block;
+}
+.actions svg{
+    height: 35px;
+    width: 35px;
+}
+#clear{
+    margin-left: 10px;
+}
+#eraser{
+    margin-right: 10px;
+}
+.actions svg.active{
+    fill:rgb(218,75,75);
+    transform: scale(1.1);
 }
