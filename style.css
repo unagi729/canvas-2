@@ -13,18 +13,24 @@ ul,ol{
 body{
   overflow: hidden;
 }
+
 .colors{
-    position: fixed;
-    top: 20px;
-    left: 30px;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    bottom: 100%;
+    position:fixed;
+    bottom: 0;
+    margin-bottom: 50px;
 }
 .colors> li{
     width: 20px;
     height: 20px;
     border-radius: 50%;
     box-shadow: 0 0 3px rgba(0,0,0,0.25);
-    margin: 10px 0;
     transition: all 0.3s;
+    display: inline-block;
+    margin: 0 12px ;
     }
 .colors> li.black{
     background: rgb(22,35,32);
@@ -54,7 +60,7 @@ body{
     background: rgb(166,228,210);
 }
 .colors> li.active{
-    box-shadow: 0 0 3px rgba(0,0,0,0.95);
+    box-shadow: 0 0 5px rgba(0,0,0,0.95);
     transform: scale(1.2);
 }
 .sizes {
@@ -68,10 +74,18 @@ body{
 .sizes > .thin{
     height: 0;
     width: 20px;
-    border-top: 3px solid ;
+    border-top: 3px solid black;
 }
 .sizes > .thick{
     height: 0;
     width: 20px;
-    border-top: 6px solid ;
+    border-top: 6px solid black;
+}
+.clear{
+    height: 0;
+    width: 20px;
+    border-top: 20px solid red;
+    top:10px;
+    left:10px;
+    position: relative;
 }
