@@ -8,10 +8,17 @@ ctx.strokeStyle = "rgb(22,35,32)"
 ctx.lineWidth = 10
 ctx.lineCap = "round"
 
+
+clear.onclick = function(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  }
+
 black.onclick = function () {
     ctx.fillStyle = 'rgb(22,35,32)'
     ctx.strokeStyle = 'rgb(22,35,32)'
-    red.classList.add('active')
+    black.classList.add('active')
+    red.classList.remove('active')
     pink.classList.remove('active')
     darkorange.classList.remove('active')
     orange.classList.remove('active')
@@ -23,7 +30,8 @@ black.onclick = function () {
 red.onclick = function () {
     ctx.fillStyle = 'rgb(218,75,75)'
     ctx.strokeStyle = 'rgb(218,75,75)'
-    black.classList.add('active')
+    red.classList.add('active')
+    black.classList.remove('active')
     pink.classList.remove('active')
     darkorange.classList.remove('active')
     orange.classList.remove('active')
@@ -35,7 +43,8 @@ red.onclick = function () {
 pink.onclick = function () {
     ctx.fillStyle = 'rgb(248,225,221)'
     ctx.strokeStyle = 'rgb(248,225,221)'
-    black.classList.add('active')
+    pink.classList.add('active')
+    black.classList.remove('active')
     red.classList.remove('active')
     darkorange.classList.remove('active')
     orange.classList.remove('active')
@@ -47,7 +56,8 @@ pink.onclick = function () {
 darkorange.onclick = function () {
     ctx.fillStyle = 'rgb(213,123,88)'
     ctx.strokeStyle = 'rgb(213,123,88)'
-    black.classList.add('active')
+    darkorange.classList.add('active')
+    black.classList.remove('active')
     red.classList.remove('active')
     pink.classList.remove('active')
     orange.classList.remove('active')
@@ -59,7 +69,8 @@ darkorange.onclick = function () {
 orange.onclick = function () {
     ctx.fillStyle = 'rgb(241,176,72)'
     ctx.strokeStyle = 'rgb(241,176,72)'
-    black.classList.add('active')
+    orange.classList.add('active')
+    black.classList.remove('active')
     red.classList.remove('active')
     pink.classList.remove('active')
     darkorange.classList.remove('active')
@@ -71,7 +82,8 @@ orange.onclick = function () {
 yellow.onclick = function () {
     ctx.fillStyle = 'rgb(253,242,98)'
     ctx.strokeStyle = 'rgb(253,242,98)'
-    black.classList.add('active')
+    yellow.classList.add('active')
+    black.classList.remove('active')
     red.classList.remove('active')
     pink.classList.remove('active')
     darkorange.classList.remove('active')
@@ -83,7 +95,8 @@ yellow.onclick = function () {
 green.onclick = function () {
     ctx.fillStyle = 'rgb(191,218,103)'
     ctx.strokeStyle = 'rgb(191,218,103)'
-    black.classList.add('active')
+    green.classList.add('active')
+    black.classList.remove('active')
     red.classList.remove('active')
     pink.classList.remove('active')
     darkorange.classList.remove('active')
@@ -95,7 +108,8 @@ green.onclick = function () {
 darkgreen.onclick = function () {
     ctx.fillStyle = 'rgb(106,173,111)'
     ctx.strokeStyle = 'rgb(106,173,111)'
-    black.classList.add('active')
+    darkgreen.classList.add('active')
+    black.classList.remove('active')
     red.classList.remove('active')
     pink.classList.remove('active')
     darkorange.classList.remove('active')
@@ -107,7 +121,8 @@ darkgreen.onclick = function () {
 blue.onclick = function () {
     ctx.fillStyle = 'rgb(166,228,210)'
     ctx.strokeStyle = 'rgb(166,228,210)'
-    black.classList.add('active')
+    blue.classList.add('active')
+    black.classList.remove('active')
     red.classList.remove('active')
     pink.classList.remove('active')
     darkorange.classList.remove('active')
