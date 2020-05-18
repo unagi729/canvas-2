@@ -3,31 +3,118 @@ canvas.width = document.documentElement.clientWidth;
 canvas.height = document.documentElement.clientHeight;
 
 let ctx = canvas.getContext("2d")
-ctx.fillStyle = "red"
-ctx.strokeStyle = "red"
+ctx.fillStyle = "rgb(22,35,32)"
+ctx.strokeStyle = "rgb(22,35,32)"
 ctx.lineWidth = 10
 ctx.lineCap = "round"
 
-red.onclick = function () {
-    ctx.fillStyle = 'red'
-    ctx.strokeStyle = 'red'
+black.onclick = function () {
+    ctx.fillStyle = 'rgb(22,35,32)'
+    ctx.strokeStyle = 'rgb(22,35,32)'
     red.classList.add('active')
+    pink.classList.remove('active')
+    darkorange.classList.remove('active')
+    orange.classList.remove('active')
+    yellow.classList.remove('active')
     green.classList.remove('active')
+    darkgreen.classList.remove('active')
+    blue.classList.remove('active')
+}
+red.onclick = function () {
+    ctx.fillStyle = 'rgb(218,75,75)'
+    ctx.strokeStyle = 'rgb(218,75,75)'
+    black.classList.add('active')
+    pink.classList.remove('active')
+    darkorange.classList.remove('active')
+    orange.classList.remove('active')
+    yellow.classList.remove('active')
+    green.classList.remove('active')
+    darkgreen.classList.remove('active')
+    blue.classList.remove('active')
+}
+pink.onclick = function () {
+    ctx.fillStyle = 'rgb(248,225,221)'
+    ctx.strokeStyle = 'rgb(248,225,221)'
+    black.classList.add('active')
+    red.classList.remove('active')
+    darkorange.classList.remove('active')
+    orange.classList.remove('active')
+    yellow.classList.remove('active')
+    green.classList.remove('active')
+    darkgreen.classList.remove('active')
+    blue.classList.remove('active')
+}
+darkorange.onclick = function () {
+    ctx.fillStyle = 'rgb(213,123,88)'
+    ctx.strokeStyle = 'rgb(213,123,88)'
+    black.classList.add('active')
+    red.classList.remove('active')
+    pink.classList.remove('active')
+    orange.classList.remove('active')
+    yellow.classList.remove('active')
+    green.classList.remove('active')
+    darkgreen.classList.remove('active')
+    blue.classList.remove('active')
+}
+orange.onclick = function () {
+    ctx.fillStyle = 'rgb(241,176,72)'
+    ctx.strokeStyle = 'rgb(241,176,72)'
+    black.classList.add('active')
+    red.classList.remove('active')
+    pink.classList.remove('active')
+    darkorange.classList.remove('active')
+    yellow.classList.remove('active')
+    green.classList.remove('active')
+    darkgreen.classList.remove('active')
+    blue.classList.remove('active')
+}
+yellow.onclick = function () {
+    ctx.fillStyle = 'rgb(253,242,98)'
+    ctx.strokeStyle = 'rgb(253,242,98)'
+    black.classList.add('active')
+    red.classList.remove('active')
+    pink.classList.remove('active')
+    darkorange.classList.remove('active')
+    orange.classList.remove('active')
+    green.classList.remove('active')
+    darkgreen.classList.remove('active')
     blue.classList.remove('active')
 }
 green.onclick = function () {
-    ctx.fillStyle = 'green'
-    ctx.strokeStyle = 'green'
+    ctx.fillStyle = 'rgb(191,218,103)'
+    ctx.strokeStyle = 'rgb(191,218,103)'
+    black.classList.add('active')
     red.classList.remove('active')
-    green.classList.add('active')
+    pink.classList.remove('active')
+    darkorange.classList.remove('active')
+    orange.classList.remove('active')
+    yellow.classList.remove('active')
+    darkgreen.classList.remove('active')
+    blue.classList.remove('active')
+}
+darkgreen.onclick = function () {
+    ctx.fillStyle = 'rgb(106,173,111)'
+    ctx.strokeStyle = 'rgb(106,173,111)'
+    black.classList.add('active')
+    red.classList.remove('active')
+    pink.classList.remove('active')
+    darkorange.classList.remove('active')
+    orange.classList.remove('active')
+    yellow.classList.remove('active')
+    green.classList.remove('active')
     blue.classList.remove('active')
 }
 blue.onclick = function () {
-    ctx.fillStyle = 'blue'
-    ctx.strokeStyle = 'blue'
+    ctx.fillStyle = 'rgb(166,228,210)'
+    ctx.strokeStyle = 'rgb(166,228,210)'
+    black.classList.add('active')
     red.classList.remove('active')
+    pink.classList.remove('active')
+    darkorange.classList.remove('active')
+    orange.classList.remove('active')
+    yellow.classList.remove('active')
     green.classList.remove('active')
-    blue.classList.add('active')
+    darkgreen.classList.remove('active')
 }
 thin.onclick = function () {
     ctx.lineWidth = 5
