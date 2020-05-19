@@ -8,7 +8,9 @@ ctx.strokeStyle = "rgb(22,35,32)"
 ctx.lineWidth = 10
 ctx.lineCap = "round"
 
-var eraserEnabled = false
+let eraserEnabled = false
+let painting = false
+
 pen.onclick = function () {
     eraserEnabled = false
     pen.classList.add('active')
@@ -21,6 +23,61 @@ eraser.onclick = function () {
 }
 clear.onclick = function () {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function drawLine(x1, y1, x2, y2) {
+    ctx.beginPath()
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.stroke()
+}
+
+var isTouchingDevice = 'ontouchstart' in document.documentElement;
+if (isTouchingDevice) { //触摸屏
+    canvas.ontouchstart = (e) => {
+        let x = e.touches[0]
+        let y = e.touches[1]
+        if(eraserEnabled){
+            ctx.clearRect(x-5,y-5,10,10)
+        }else{
+            last = [x, y]
+        }
+    }
+    canvas.ontouchmove = (e) => {
+        let x = e.touches[0].clientX
+        let y = e.touches[0].clientY
+        if(eraserEnabled){
+            ctx.clearRect(x-5,y-5,10,10)
+        }else{
+            drawLine(last[0], last[1], x, y)
+            last = [x, y]
+        }
+    }
+} else { //PC端
+    canvas.onmousedown = (e) => {
+        painting = true
+        let x = e.clientX
+        let y = e.clientY
+        if(eraserEnabled){
+            ctx.clearRect(x-5,y-5,10,10)
+        }else{
+            last = [x, y]
+        }
+    }
+    canvas.onmousemove = (e) => {
+        let x = e.clientX
+        let y = e.clientY
+        if(!painting){return}
+        if(eraserEnabled){
+            ctx.clearRect(x-5,y-5,10,10)
+        }else{
+            drawLine(last[0], last[1],x, y)
+            last = [x, y]
+        }
+    }
+    canvas.onmouseup = () => {
+        painting = false
+    }
 }
 
 black.onclick = function () {
@@ -149,42 +206,4 @@ thick.onclick = function () {
     ctx.lineWidth = 10
     thick.classList.add('active')
     thin.classList.remove('active')
-}
-
-let painting = false
-
-function drawLine(x1, y1, x2, y2) {
-    ctx.beginPath()
-    ctx.moveTo(x1, y1)
-    ctx.lineTo(x2, y2)
-    ctx.stroke()
-}
-
-var isTouchingDevice = 'ontouchstart' in document.documentElement;
-if (isTouchingDevice) {
-    canvas.ontouchstart = (e) => {
-        let x = e.touches[0]
-        let y = e.touches[1]
-        last = [x, y]
-    }
-    canvas.ontouchmove = (e) => {
-        let x = e.touches[0].clientX
-        let y = e.touches[0].clientY
-        drawLine(last[0], last[1], x, y)
-        last = [x, y]
-    }
-} else {
-    canvas.onmousedown = (e) => {
-        painting = true
-        last = [e.clientX, e.clientY]
-    }
-    canvas.onmousemove = (e) => {
-        if (painting === true) {
-            drawLine(last[0], last[1], e.clientX, e.clientY)
-            last = [e.clientX, e.clientY]
-        }
-    }
-    canvas.onmouseup = () => {
-        painting = false
-    }
 }
